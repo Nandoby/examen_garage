@@ -1,0 +1,13 @@
+/** Home **/
+
+#hero_home {
+    width: 100%;
+    height: 60vh;
+    background-image: url("../images/lance-asper-N9Pf2J656aQ-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 70%;
+}
+
+#description {
+}
