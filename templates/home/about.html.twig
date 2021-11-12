@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <h2 class="display-5 col-8 my-4">Notre savoir à votre service</h2>
+                <p class="col-8 mb-4 lead">
+                    La réception après-vente de Bia Car est opérationnelle dès 7h30 en semaine. Nous disposons d'une
+                    flotte
+                    de voitures de location, votre mobilité est assurée. Pour les petites réparations, vous pouvez
+                    compter
+                    sur notre service express, sans rendez-vous. Nous nous occupons aussi de vos pneus, et du
+                    gardiennage de
+                    vos pneus hiver/été.
+                </p>
+            </div>
+            <h2 class="display-5 col-8 my-4">Notre personnel</h2>
+            <div class="row">
+
+                {% for staff in staffs %}
+                    <div class="card col-2">
+                        <img src="{{ staff.picture }}" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ staff.nom }}</h5>
+                            <p class="card-text">Tél: {{ staff.telephone }}</p>
+                            <p class="card-text">Email: {{ staff.email }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+
+    </section>
+{% endblock %}
