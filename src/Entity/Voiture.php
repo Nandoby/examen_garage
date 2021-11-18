@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\VoitureRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -68,9 +70,35 @@ class Voiture
     private $description;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $options;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $coverImage;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="voiture")
+     */
+    private $images;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="voiture")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $marque;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -205,6 +233,72 @@ class Voiture
     public function setOptions(string $options): self
     {
         $this->options = $options;
+
+        return $this;
+    }
+
+    public function getCoverImage(): ?string
+    {
+        return $this->coverImage;
+    }
+
+    public function setCoverImage(string $coverImage): self
+    {
+        $this->coverImage = $coverImage;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setVoiture($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getVoiture() === $this) {
+                $image->setVoiture(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getMarque(): ?Marque
+    {
+        return $this->marque;
+    }
+
+    public function setMarque(?Marque $marque): self
+    {
+        $this->marque = $marque;
 
         return $this;
     }

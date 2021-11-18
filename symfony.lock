@@ -1,4 +1,7 @@
 {
+    "cocur/slugify": {
+        "version": "v4.0.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -602,6 +605,9 @@
         "version": "1.2.1"
     },
     "twig/extra-bundle": {
+        "version": "v3.3.3"
+    },
+    "twig/intl-extra": {
         "version": "v3.3.3"
     },
     "twig/twig": {

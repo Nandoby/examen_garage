@@ -3,5 +3,22 @@
 {% block title %}Hello VentesController!{% endblock %}
 
 {% block body %}
+    <div class="container">
+        <div class="row">
+            {% for voiture in voitures %}
 
+                <div class="card mb-3 col-sm-6 col-12 col-lg-4">
+                    <h3 class="card-header">{{ voiture.marque.name}} {{ voiture.modele }}</h3>
+                    <img src="{{ voiture.coverImage }}" alt="">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Kilomètres : {{ voiture.km | number_format(0, ',', ' ') }} km</li>
+                        <li class="list-group-item">Prix : {{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="{{ path("ventes_slug", {slug: voiture.slug}) }}" class="btn btn-primary">Voir plus</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
