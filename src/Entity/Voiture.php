@@ -3,12 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\VoitureRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=VoitureRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class Voiture
 {
@@ -94,6 +96,19 @@ class Voiture
      * @ORM\JoinColumn(nullable=false)
      */
     private $marque;
+
+    /**
+     * Initialisation du slug automatique
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function initializeSlug()
+    {
+        if (empty($this->slug)) {
+            $slugify = new Slugify();
+            $this->slug = $slugify->slugify($this->marque.' '.$this->modele.' '.rand());
+        }
+    }
 
     public function __construct()
     {

@@ -11,11 +11,11 @@
                     <h3 class="card-header">{{ voiture.marque.name}} {{ voiture.modele }}</h3>
                     <img src="{{ voiture.coverImage }}" alt="">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Kilomètres : {{ voiture.km | number_format(0, ',', ' ') }} km</li>
-                        <li class="list-group-item">Prix : {{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</li>
+                        <li class="list-group-item bg-opacity-25 bg-black">Kilomètres : {{ voiture.km | number_format(0, ',', ' ') }} km</li>
+                        <li class="list-group-item bg-opacity-25 bg-black">Prix : {{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="{{ path("ventes_slug", {slug: voiture.slug}) }}" class="btn btn-primary">Voir plus</a>
+                    <div class="card-body d-flex justify-content-end align-items-end">
+                        <a href="{{ path("ventes_slug", {slug: voiture.slug}) }}" class="btn btn-outline-warning">Voir plus</a>
                     </div>
                 </div>
             {% endfor %}

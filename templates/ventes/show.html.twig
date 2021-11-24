@@ -4,57 +4,65 @@
 
     {# Carousel #}
     <div class="container-fluid" style="min-height: calc(100vh - 56px * 2)">
-           <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
-               <div class="carousel-inner">
-                   {% for image in voiture.images %}
-                       <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="5000">
-                           <img src="{{ image.title }}" alt="" class="d-block w-100" style="height: 700px; object-fit: cover;">
-                       </div>
-                   {% endfor %}
-                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
-                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                   </button>
-                   <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
-                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                   </button>
-               </div>
-           </div>
+        <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for image in voiture.images %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="5000">
+                        <img src="{{ image.title }}" alt="" class="d-block w-100"
+                             style="height: 700px; object-fit: cover;">
+                    </div>
+                {% endfor %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselImages"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
 
-
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Marque</th>
-                <th>Modèle</th>
-                <th>Kilomètres</th>
-                <th>Prix</th>
-                <th>Nombre de propriétaires</th>
-                <th>Cylindrée</th>
-                <th>Puissance</th>
-                <th>Carburant</th>
-                <th>Date de mise en circulation</th>
-                <th>Transmission</th>
-                <th>Description</th>
-                <th>Options</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>{{ voiture.marque.name }}</td>
-                <td>{{ voiture.modele }}</td>
-                <td>{{ voiture.km | number_format(0, ',', ' ') }} km</td>
-                <td>{{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</td>
-                <td>{{ voiture.nombresProprietaires }}</td>
-                <td>{{ voiture.cylindree }}</td>
-                <td>{{ voiture.puissance }} ch</td>
-                <td>{{ voiture.carburant }}</td>
-                <td>{{ voiture.miseCirculation | date('d/m/Y') }}</td>
-                <td>{{ voiture.transmission }}</td>
-                <td>{{ voiture.description }}</td>
-                <td>{{ voiture.options }}</td>
-
-            </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Marque</th>
+                            <th scope="col">Modèle</th>
+                            <th scope="col">Kilomètres</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Nombre de propriétaires</th>
+                            <th scope="col">Cylindrée</th>
+                            <th scope="col">Puissance</th>
+                            <th scope="col">Carburant</th>
+                            <th scope="col">Date de mise en circulation</th>
+                            <th scope="col">Transmission</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>{{ voiture.marque.name }}</th>
+                            <td>{{ voiture.modele }}</td>
+                            <td>{{ voiture.km | number_format(0, ',', ' ') }} km</td>
+                            <td>{{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</td>
+                            <td>{{ voiture.nombresProprietaires }}</td>
+                            <td>{{ voiture.cylindree }}</td>
+                            <td>{{ voiture.puissance }} ch</td>
+                            <td>{{ voiture.carburant }}</td>
+                            <td>{{ voiture.miseCirculation | date('d/m/Y') }}</td>
+                            <td>{{ voiture.transmission }}</td>
+                            <td>{{ voiture.description }}</td>
+                            <td>{{ voiture.options }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-outline-warning" href="{{ path("ventes") }}">Retour</a>
     </div>
 {% endblock %}
