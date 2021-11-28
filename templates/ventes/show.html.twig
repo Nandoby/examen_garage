@@ -49,7 +49,7 @@
                             <td>{{ voiture.modele }}</td>
                             <td>{{ voiture.km | number_format(0, ',', ' ') }} km</td>
                             <td>{{ voiture.prix | format_currency('EUR', locale='fr_BE') }}</td>
-                            <td>{{ voiture.nombresProprietaires }}</td>
+                            <td class="text-center">{{ voiture.nombresProprietaires }}</td>
                             <td>{{ voiture.cylindree }}</td>
                             <td>{{ voiture.puissance }} ch</td>
                             <td>{{ voiture.carburant }}</td>
@@ -63,6 +63,6 @@
                 </div>
             </div>
         </div>
-        <a class="btn btn-outline-warning" href="{{ path("ventes") }}">Retour</a>
+        <a class="btn btn-outline-warning my-3" href="{{ path("ventes") }}">Retour</a>
     </div>
 {% endblock %}

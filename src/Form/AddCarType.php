@@ -9,7 +9,12 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -25,26 +30,31 @@ class AddCarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('modele', TextType::class, [
-                'attr' => [
-                    'class'
-                ]
+            ->add('modele', TextType::class)
+            ->add('km', IntegerType::class)
+            ->add('prix', MoneyType::class)
+            ->add('nombres_proprietaires', IntegerType::class)
+            ->add('cylindree', TextType::class)
+            ->add('puissance', TextType::class)
+            ->add('mise_circulation', DateType::class, [
+                'widget' => 'single_text'
             ])
-            ->add('km')
-            ->add('prix')
-            ->add('nombres_proprietaires')
-            ->add('cylindree')
-            ->add('puissance')
-            ->add('mise_circulation')
-            ->add('carburant')
-            ->add('transmission')
-            ->add('description')
-            ->add('options')
-            ->add('coverImage', )
+            ->add('carburant', TextType::class)
+            ->add('transmission', TextType::class)
+            ->add('description', TextareaType::class)
+            ->add('options', TextType::class)
+            ->add('coverImage', UrlType::class)
             ->add('marque', EntityType::class, [
                 'class' => Marque::class,
                 'choice_label' => 'name'
-            ]);
+            ])
+            ->add('images', CollectionType::class, [
+                'entry_type' => ImagesType::class,
+                'allow_add' => true,
+                'allow_delete' => true
+            ])
+
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

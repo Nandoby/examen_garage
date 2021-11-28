@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7635d334-7f06-4658-a1cd-03709138e153" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VentesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VentesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Voiture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Voiture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AddCarType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddCarType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ventes/addCar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ventes/addCar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ventes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ventes/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ventes/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ventes/show.html.twig" afterDir="false" />
     </list>
@@ -178,7 +183,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -209,7 +214,8 @@
       <workItem from="1637168350801" duration="12639000" />
       <workItem from="1637230468548" duration="17178000" />
       <workItem from="1637316466939" duration="2647000" />
-      <workItem from="1637792071358" duration="3236000" />
+      <workItem from="1637792071358" duration="8858000" />
+      <workItem from="1638041606681" duration="14366000" />
     </task>
     <servers />
   </component>
