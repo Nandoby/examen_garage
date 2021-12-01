@@ -5,14 +5,23 @@ namespace App\DataFixtures;
 use App\Entity\Image;
 use App\Entity\Marque;
 use App\Entity\Staff;
+use App\Entity\User;
 use App\Entity\Voiture;
 use Cocur\Slugify\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private $passwordHasher;
+
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+        $this->passwordHasher = $passwordHasher;
+    }
+
     public function load(ObjectManager $manager): void
     {
 
@@ -112,6 +121,18 @@ class AppFixtures extends Fixture
             }
 
 
+        }
+
+        for ($u = 1; $u < 10; $u++) {
+            $faker = Factory::create('fr_FR');
+            $user = new User();
+
+            $user->setEmail($faker->email)
+                ->setFirstname($faker->firstName)
+                ->setLastname($faker->lastName)
+                ->setPassword($this->passwordHasher->hashPassword($user, 'password'))
+            ;
+            $manager->persist($user);
         }
 
 

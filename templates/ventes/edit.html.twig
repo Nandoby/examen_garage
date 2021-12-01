@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% form_theme form 'form_theme/collection.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Edition de la voiture : {{ voiture.marque.name }} {{ voiture.modele }}</h1>
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+        <button class="btn btn-primary" type="submit">Modifier</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/index.js"></script>
+{% endblock %}
+

@@ -23,7 +23,7 @@ class VentesController extends AbstractController
     public function index(VoitureRepository $voitureRepository): Response
     {
 
-        return $this->render('ventes/index.html.twig', [
+        return $this->render('ventes/login.html.twig', [
             'voitures' => $voitureRepository->findAll()
         ]);
     }
@@ -67,6 +67,31 @@ class VentesController extends AbstractController
 
         return $this->render('ventes/show.html.twig', [
             'voiture' => $voiture
+        ]);
+    }
+
+    /**
+     * Permet de modifier une voiture
+     * @Route("/ventes/{slug}/edit", name="ventes_edit")
+     */
+    public function edit(Request $request, EntityManagerInterface $manager, Voiture $voiture)
+    {
+        $form = $this->createForm(AddCarType::class, $voiture);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            foreach($voiture->getImages() as $image) {
+                $image->setVoiture($voiture);
+                $manager->persist($image);
+            }
+            $manager->persist($voiture);
+            $manager->flush();
+        }
+
+        return $this->render('ventes/edit.html.twig', [
+            'voiture' => $voiture,
+            'form' => $form->createView()
         ]);
     }
 }

@@ -105,7 +105,7 @@ class Voiture
     private $coverImage;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="voiture")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="voiture", orphanRemoval=true)
      */
     private $images;
 
