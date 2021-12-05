@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635d334-7f06-4658-a1cd-03709138e153" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/garage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/garage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211201231239.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211201232019.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/VentesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VentesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form_theme/collection.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +173,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="203jFQCB1qBrIudzf9UVkThONZO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -242,7 +233,7 @@
       <workItem from="1638537739195" duration="114000" />
       <workItem from="1638632135840" duration="357000" />
       <workItem from="1638719978873" duration="742000" />
-      <workItem from="1638721191652" duration="770000" />
+      <workItem from="1638721191652" duration="2801000" />
     </task>
     <servers />
   </component>
