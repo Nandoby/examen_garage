@@ -12,6 +12,11 @@
     </head>
     <body>
         {% include 'partials/header.html.twig' %}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="text-center alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
         {% block body %}{% endblock %}
         {% include 'partials/footer.html.twig'%}
     </body>

@@ -10,6 +10,7 @@ use App\Repository\ImageRepository;
 use App\Repository\MarqueRepository;
 use App\Repository\VoitureRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class VentesController extends AbstractController
     public function index(VoitureRepository $voitureRepository): Response
     {
 
-        return $this->render('ventes/login.html.twig', [
+        return $this->render('ventes/index.html.twig', [
             'voitures' => $voitureRepository->findAll()
         ]);
     }
@@ -73,6 +74,7 @@ class VentesController extends AbstractController
     /**
      * Permet de modifier une voiture
      * @Route("/ventes/{slug}/edit", name="ventes_edit")
+     * @IsGranted("ROLE_ADMIN", message="Vous n'avez pas l'autorisation pour éditer")
      */
     public function edit(Request $request, EntityManagerInterface $manager, Voiture $voiture)
     {
