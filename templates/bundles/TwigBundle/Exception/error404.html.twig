@@ -1,10 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Page not found</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="display-1">Oups !</h1>
+                <h6 class="display-6">La page que vous recherchez semble introuvable</h6>
+                <p>Code d'erreur : <strong>{{ exception.statusCode }}</strong></p>
+                <a href="{{ path('home') }}" class="btn btn-primary my-3">Revenir sur le site</a>
+            </div>
+            <div class="col-6">
+                <img src="https://i.pinimg.com/736x/9e/40/17/9e4017b1f37a54b169e36583037444d4.jpg" alt="Chuck Norris" class="img-fluid">
+            </div>
+        </div>
 
-    <p>
-        The requested page couldn't be located. Checkout for any URL
-        misspelling or <a href="{{ path('homepage') }}">return to the homepage</a>
-    </p>
+    </div>
+
 {% endblock %}

@@ -32,6 +32,7 @@ class VentesController extends AbstractController
     /**
      * Cela permet d'afficher le formulaire pour ajouter une voiture
      * @Route("/ventes/add", name="ventes_addCar")
+     * @IsGranted("ROLE_ADMIN", message="Vous n'avez pas l'autorisation à accéder")
      */
     public function addCar(Request $request, EntityManagerInterface $manager): Response
     {
