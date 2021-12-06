@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Suppréssion de la voiture {{ voiture.marque.name }}
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Suppréssion de la voiture {{ voiture.marque.name }} {{ voiture.modele }}</h1>
+        <img src="{{ voiture.coverImage }}" alt="" class="img-fluid" style="height: 200px">
+        <p class="my-4">Etes-vous certain de vouloir supprimer la voiture <strong>{{ voiture.marque.name }} {{ voiture.modele }}</strong> ?</p>
+        <a href="{{ path('ventes_remove', { 'slug' : voiture.slug }) }}" class="btn btn-success mb-4">Oui</a>
+        <a href="{{ path('ventes_slug', { 'slug' : voiture.slug }) }}" class="btn btn-danger mb-4">Non</a>
+
+    </div>
+{% endblock %}

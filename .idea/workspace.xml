@@ -8,11 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VentesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VentesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/validators+intl-icu.af3.xlf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ventes/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ventes/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +241,7 @@
       <workItem from="1638719978873" duration="742000" />
       <workItem from="1638721191652" duration="2801000" />
       <workItem from="1638728679623" duration="3883000" />
-      <workItem from="1638734818882" duration="897000" />
+      <workItem from="1638734818882" duration="8248000" />
     </task>
     <servers />
   </component>

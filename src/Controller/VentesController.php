@@ -97,4 +97,27 @@ class VentesController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/ventes/{slug}/show-remove", name="ventes_show_remove")
+     */
+    public function showRemove(Voiture $voiture)
+    {
+        return $this->render('ventes/remove.html.twig', [
+            'voiture' => $voiture
+        ]);
+    }
+
+    /**
+     * @Route("/ventes/{slug}/remove", name="ventes_remove")
+     */
+    public function remove(Voiture $voiture, EntityManagerInterface $manager)
+    {
+        $this->addFlash('success', "La voiture {$voiture->getMarque()->getName()} {$voiture->getModele()} a bien été supprimée");
+        $manager->remove($voiture);
+        $manager->flush();
+        return $this->redirectToRoute('ventes');
+    }
+
+
 }

@@ -23,6 +23,11 @@
                         <a href="{{ path("about") }}"
                            class="nav-link {{ app.request.get('_route') == 'about' ? 'active' }}">A propos</a>
                     </li>
+                    {%  if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a href="{{ path('ventes_addCar') }}" class="nav-link {{ app.request.get('_route') == 'ventes_addCar' ? 'active' }}">Ajouter une voiture</a>
+                        </li>
+                    {% endif %}
                 </ul>
                 {% if app.user %}
                     <ul class="navbar-nav me-3">
