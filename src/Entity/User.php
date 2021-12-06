@@ -58,8 +58,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function pictureDefault()
     {
-        if (empty($this->getPicture)) {
-            $this->setPicture('https://placehold.it/200/200');
+        if (empty($this->getPicture())) {
+            $this->setPicture('https://i.pinimg.com/originals/40/90/0b/40900b2708df9c2bcb6af5defb29cfc9.jpg');
         }
     }
 
