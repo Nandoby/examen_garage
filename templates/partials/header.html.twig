@@ -31,7 +31,15 @@
                 </ul>
                 {% if app.user %}
                     <ul class="navbar-nav me-3">
-                        <li class="nav-item"><a href="{{ path('logout') }}" class="nav-link">Déconnexion</a></li>
+                        <li class="nav-item">
+                            <img class="img-fluid rounded-circle navbar-brand" src="{{ app.user.picture }}" style="height:50px">
+                        </li>
+                        <li class="nav-item">
+                            <p class="text-light navbar-text">{{ app.user.firstname }} {{ app.user.lastname }} {{ is_granted('ROLE_ADMIN') ? '(Administrateur)' : '(Utilisateur)' }}</p>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('logout') }}" class="nav-link">Déconnexion</a>
+                        </li>
                     </ul>
                 {% else %}
                     <ul class="navbar-nav me-3">
