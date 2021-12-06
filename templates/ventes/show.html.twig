@@ -60,8 +60,10 @@
                         </tr>
                         </tbody>
                     </table>
-                    <a href="{{ path('ventes_edit', { 'slug' : voiture.slug }) }}" class="btn btn-primary">Editer</a>
-                    <a href="{{ path('ventes_show_remove', { 'slug' : voiture.slug }) }}" class="btn btn-danger">Supprimer</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('ventes_edit', { 'slug' : voiture.slug }) }}" class="btn btn-primary">Editer</a>
+                        <a href="{{ path('ventes_show_remove', { 'slug' : voiture.slug }) }}" class="btn btn-danger">Supprimer</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
